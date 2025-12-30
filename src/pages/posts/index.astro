@@ -1,4 +1,22 @@
 ---
+const posts = [
+  {
+    title: "Example Post",
+    date: "2025-12-30",
+    slug: "example-post",
+    summary: "Replace this with your real post summary.",
+  },
+];
 ---
+
 <h1>Posts</h1>
-<p>This route is working.</p>
+
+<ul>
+  {posts.map((p) => (
+    <li>
+      <a href={`/posts/${p.slug}/`}>{p.title}</a>
+      <span> | {p.date}</span>
+      <div>{p.summary}</div>
+    </li>
+  ))}
+</ul>
